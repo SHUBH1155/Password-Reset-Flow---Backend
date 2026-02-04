@@ -11,7 +11,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// 🔹 ROOT ROUTE (FOR RENDER TEST)
 app.get("/", (req, res) => {
   res.send("API is running 🚀");
 });
