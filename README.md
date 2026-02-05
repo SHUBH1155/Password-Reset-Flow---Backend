@@ -10,7 +10,7 @@ This is the backend for the Authentication System built using:
 - Express.js
 - MongoDB (Mongoose)
 - JWT Authentication
-- Email based Password Reset
+- Email based Password Reset (Brevo API)
 
 ---
 
@@ -18,12 +18,13 @@ This is the backend for the Authentication System built using:
 
 - User Registration
 - User Login with JWT
-- Forgot Password (Email Reset Link)
+- Forgot Password (Email Reset Link via Brevo API)
 - Reset Password using Token
 - Protected Routes
 - Get Logged-in User Profile
 - JWT Middleware
 - Secure Password Hashing (bcrypt)
+- Production-ready backend logic
 
 API Endpoints
 
@@ -35,9 +36,17 @@ API Endpoints
 | POST   | /api/auth/reset-password/:token | Reset password                 |
 | GET    | /api/auth/profile               | Get logged-in user (Protected) |
 
+$ -- Authentication & Security
+
+- JWT based authentication
+- Encrypted password storage using bcrypt
+- Secure password reset flow using email token
+- Protected API routes
+
 Project Status
 
 -- Fully working authentication system
--- Password reset via email
+-- Password reset via email (Brevo API)
 -- JWT based protected routes
--- Production ready backend logic
+-- Production-ready backend logic
+-- Successfully deployed on Render
