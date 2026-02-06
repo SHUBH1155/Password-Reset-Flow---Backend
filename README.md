@@ -1,3 +1,5 @@
+$ -- Production-ready authentication backend with secure password reset using Brevo Transactional Email API.
+
 $ -- Complete API documentation is available here:
 
 https://documenter.getpostman.com/view/51800509/2sBXc7MQEf
@@ -10,7 +12,8 @@ This is the backend for the Authentication System built using:
 - Express.js
 - MongoDB (Mongoose)
 - JWT Authentication
-- Email based Password Reset (Brevo API)
+- Brevo Transactional Email API
+- bcrypt for password hashing
 
 ---
 
@@ -19,22 +22,25 @@ This is the backend for the Authentication System built using:
 - User Registration
 - User Login with JWT
 - Forgot Password (Email Reset Link via Brevo API)
-- Reset Password using Token
+- Reset Password using Secure Token
+- Token Expiry (15 minutes)
 - Protected Routes
 - Get Logged-in User Profile
-- JWT Middleware
-- Secure Password Hashing (bcrypt)
-- Production-ready backend logic
+- Secure Password Hashing
+- Production Deployment on Render
+
+$ -- Email System:
+- Integrated with Brevo Transactional Email API
+- SMTP removed to avoid timeouts on cloud platforms
+- Email delivery verified (Sent, Delivered, Opened, Clicked)
 
 API Endpoints
 
-| Method | Endpoint                        | Description                    |
-| ------ | ------------------------------- | ------------------------------ |
-| POST   | /api/auth/register              | Register new user              |
-| POST   | /api/auth/login                 | Login user                     |
-| POST   | /api/auth/forgot-password       | Send reset link                |
-| POST   | /api/auth/reset-password/:token | Reset password                 |
-| GET    | /api/auth/profile               | Get logged-in user (Protected) |
+| Method | Endpoint                          | Description                  ||   POST      /api/auth/register                  Register new user  
+POST      /api/auth/login                     Login user  
+POST      /api/auth/forgot-password           Send reset link via email  
+POST      /api/auth/reset-password/:token     Reset password using token  
+GET       /api/auth/profile                   Get logged-in user (Protected)
 
 $ -- Authentication & Security
 
